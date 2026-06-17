@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="m-0 bg-slate-900 text-white font-sans ">
+
+    <!-- Main Navbar (Your original code, updated with the click handler) -->
+<nav class="bg-slate-900/80 backdrop-blur-md border-b border-slate-800 text-white 
+            flex justify-between items-center py-4 px-6 md:px-6 sm:px-6 shadow-lg sticky top-0 z-50">
+    
+    <h2 class="text-xl font-bold tracking-wide">Drey<span class="text-violet-400">.dev</span></h2>
+
+    
+    <ul class="hidden md:flex items-center text-sm space-x-2">
+         <li class="w-20 py-2 text-center text-slate-300 rounded-lg hover:bg-slate-800 hover:text-violet-400 transition-all duration-300 ease-in-out">
+            <a href="#home" class="block w-full">Home</a>
+        </li>
+        <li class="w-20 py-2 text-center text-slate-300 rounded-lg hover:bg-slate-800 hover:text-violet-400 transition-all duration-300 ease-in-out">
+            <a href="#projects" class="block w-full">Projects</a>
+        </li>
+        <li class="w-20 py-2 text-center text-slate-300 rounded-lg hover:bg-slate-800 hover:text-violet-400 transition-all duration-300 ease-in-out">
+            <a href="#about" class="block w-full">About</a>
+        </li>
+        <li class="w-20 py-2 text-center text-slate-300 rounded-lg hover:bg-slate-800 hover:text-violet-400 transition-all duration-300 ease-in-out">
+            <a href="#skills" class="block w-full">Skills</a>
+        </li>
+        <li class="w-20 py-2 text-center text-slate-300 rounded-lg hover:bg-slate-800 hover:text-violet-400 transition-all duration-300 ease-in-out">
+            <a href="#contact" class="block w-full">Contact</a>
+        </li>
+    </ul>
+
+    <button onclick="toggleMenu()" class="block md:hidden  p-2 text-slate-400 hover:text-white transition-colors focus:outline-none">
+        <svg class="w-6 h-6 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+            <line x1="4" y1="18" x2="20" y2="18"></line>
+        </svg>
+    </button>
+</nav>
+
+
+<div id="mobile-menu" class="fixed inset-0 top-[61px] z-40 bg-slate-950/95 backdrop-blur-lg border-b border-slate-900
+                            opacity-0 pointer-events-none md:hidden transition-all duration-300 ease-in-out">
+    <ul class="flex flex-col items-center justify-center p-8 space-y-6 text-base font-medium text-slate-300 h-[calc(100vh-61px)]">
+        <li class="w-full text-center">
+            <a onclick="toggleMenu()" href="#home" class="block py-3 rounded-xl active:bg-slate-900
+             hover:text-violet-400 transition-colors">Home</a>
+        </li>
+        <li class="w-full text-center">
+            <a onclick="toggleMenu()" href="#projects" class="block py-3 rounded-xl active:bg-slate-900
+             hover:text-violet-400 transition-colors">Projects</a>
+        </li>
+        <li class="w-full text-center">
+            <a onclick="toggleMenu()" href="#about" class="block py-3 rounded-xl
+             active:bg-slate-900 hover:text-violet-400 transition-colors">About</a>
+        </li>
+        <li class="w-full text-center">
+            <a onclick="toggleMenu()" href="#skills" class="block py-3 rounded-xl
+             active:bg-slate-900 hover:text-violet-400 transition-colors">Skills</a>
+        </li>
+        <li class="w-full text-center">
+            <a onclick="toggleMenu()" href="#contact" class="block py-3 rounded-xl
+             active:bg-slate-900 hover:text-violet-400 transition-colors">Contact</a>
+        </li>
+    </ul>
+</div>
+
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            
+            // Toggles visibility states and makes the container clickable/unclickable
+            menu.classList.toggle('opacity-0');
+            menu.classList.toggle('opacity-100');
+            menu.classList.toggle('pointer-events-none');
+        }
+    </script>
+    <section id="home" class="flex flex-col-reverse md:flex-row justify-between items-center bg-slate-900 
+             px-6 md:px-6 sm:px-6 gap-10 md:gap-16 w-full py-10 md:py-20 scroll-mt-24" >
+
+        <div class="text-center md:text-left flex-1">
+           <h1 class="text-3xl sm:text-4xl md:text-4xl font-extrabold text-white tracking-tight mb-6 leading-tight">
+              Hey, I'm <span class="text-violet-400 animate-pulse ">Damilare Okanlawon</span>. <br class="hidden sm:inline"> I build web interfaces that scale.
+           </h1>
+            <p class="text-sm sm:text-sm text-slate-400 max-w-xl mx-auto md:mx-0 mb-8 leading-relaxed">
+            Frontend Developer specializing in crafting ultra-responsive, accessible user experiences using modern JavaScript and Tailwind CSS.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center md:justify-start items-stretch sm:items-center gap-4 max-w-xs sm:max-w-none mx-auto">
+                <button class="bg-violet-500 hover:bg-violet-600 text-white font-semibold px-8 py-3 rounded-lg shadow-lg 
+                shadow-violet-500/20 transition-all duration-200 transform hover:-translate-y-0.5 whitespace-nowrap">
+                    View My Work
+                </button>
+                <button class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold px-8 py-3 rounded-lg border
+                 border-slate-700 transition-all duration-200 transform hover:-translate-y-0.5 whitespace-nowrap">
+                    Let's Chat
+                </button>
+            </div>
+        </div>
+       
+        <div class="flex justify-center shrink-0">
+            <img src="images/img2.jpg" alt="Drey Dev" 
+            class="rounded-xl object-cover border-2 border-slate-700 shadow-lg 
+            w-64 h-64 sm:w-72 lg:w-96 sm:h-72 md:w-80 md:h-80 max-w-full object-top ">
+        </div>
+        
+    </section>
+
+
+   <section id="projects" class="w-full px-6 sm:px-6 md:px-6 py-10 border-t border-slate-800/60 scroll-mt-24">
+    
+    <div class="mb-12">
+        <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Featured Projects</h2>
+        <p class="mt-2 text-slate-400">A gallery of my recent engineering builds, components, and platforms.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <div class="group bg-slate-800/40 border border-slate-800 hover:border-violet-500/50 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-xl">
+            <div>
+                <div class="h-48 w-full overflow-hidden bg-slate-950 border-b border-slate-800">
+                    <img src="images/taskflow.jpg" alt="Drey TaskFlow Screenshot" 
+                         class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-semibold text-violet-400 tracking-wider uppercase">TaskFlow</span>
+                        <span class="h-2 w-2 rounded-full bg-violet-400 animate-pulse"></span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-violet-400 transition-colors">Drey TaskFlow</h3>
+                    <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+                        A sleek, ultra-responsive task management dashboard built to optimize team workflows. Features real-time state updates and fluid drag-and-drop mechanics.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="text-xs bg-slate-900 text-slate-300 px-3 py-1 rounded-md border border-slate-800">HTML</span>
+                        <span class="text-xs bg-slate-900 text-slate-300 px-3 py-1 rounded-md border border-slate-800">Tailwind CSS</span>
+                        <span class="text-xs bg-slate-900 text-slate-300 px-3 py-1 rounded-md border border-slate-800">Javascript</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 mx-6 mb-6 pt-4 border-t border-slate-800/60 text-sm">
+                <a href="https://dreytaskform.vercel.app/" target="_blank" class="text-white hover:text-violet-400 font-medium transition-colors">Live Demo →</a>
+                <p class="text-slate-400">Click Live Demo to view the project</p>
+            </div>
+        </div>
+
+        <div class="group bg-slate-800/40 border border-slate-800 hover:border-violet-500/50 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-xl">
+            <div>
+                <div class="h-48 w-full overflow-hidden bg-slate-950 border-b border-slate-800">
+                    <img src="images/smgweb.jpg" target="_blank" alt="TaskFlow" 
+                         class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-semibold text-violet-400 tracking-wider uppercase">E-Commerce UI</span>
+                        <span class="h-2 w-2 rounded-full bg-fuchsia-400 animate-pulse"></span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-violet-400 transition-colors">SMG_Collection</h3>
+                    <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+                        An ultra-fast storefront prioritizing dynamic product filtering, seamless animated cart micro-interactions, and flawless Lighthouse accessibility scores.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="text-xs bg-slate-900 text-slate-300 px-3 py-1 rounded-md border border-slate-800">Javascript</span>
+                        <span class="text-xs bg-slate-900 text-slate-300 px-3 py-1 rounded-md border border-slate-800">Tailwind CSS</span>
+                        <span class="text-xs bg-slate-900 text-slate-300 px-3 py-1 rounded-md border border-slate-800">HTML</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 mx-6 mb-6 pt-4 border-t border-slate-800/60 text-sm">
+                <a href="https://sheymineegud-collection-by-drey.vercel.app/#" target="_blank" class="text-white hover:text-violet-400 font-medium transition-colors">Live Demo →</a>
+                <p class="text-slate-400">Click Live Demo to view the project</p>
+            </div>
+        </div>
+
+        <div class="group bg-slate-800/40 border border-slate-800 hover:border-violet-500/50 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-xl">
+            <div>
+                <div class="h-48 w-full overflow-hidden bg-slate-950 border-b border-slate-800">
+                    <img src="images/RCCG FORM.jpg" alt="Sheymineegud Hub Dashboard" 
+                         class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-semibold text-violet-400 tracking-wider ">REGISTRATION FORM</span>
+                        <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-violet-400 transition-colors">RCCG Worker's Form</h3>
+                    <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+                        A modern, lightning-fast shopping application built to deliver seamless product discovery and zero-latency cart interactions with local state persistence.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="text-xs bg-slate-900 text-slate-300 px-3 py-1 rounded-md border border-slate-800">JavaScript</span>
+                        <span class="text-xs bg-slate-900 text-slate-300 px-3 py-1 rounded-md border border-slate-800">Tailwind CSS</span>
+                        <span class="text-xs bg-slate-900 text-slate-300 px-3 py-1 rounded-md border border-slate-800">HTML</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 mx-6 mb-6 pt-4 border-t border-slate-800/60 text-sm">
+                <a href="https://agbadesigner.vercel.app/?" target="_blank" class="text-white hover:text-violet-400 font-medium transition-colors">Live Demo →</a>
+                <p class="text-slate-400">Click Live Demo to view the project</p>
+            </div>
+        </div>
+
+        <div class="group bg-slate-800/40 border border-slate-800 hover:border-violet-500/50 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between shadow-xl">
+            <div>
+                <div class="h-48 w-full overflow-hidden bg-slate-950 border-b border-slate-800">
+                    <img src="images/calculator.jpg" alt="Calculator App Screenshot" 
+                         class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out">
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-semibold text-violet-400 tracking-wider uppercase">Utility Web Application</span>
+                        <span class="h-2 w-2 rounded-full bg-amber-400 animate-pulse"></span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-violet-400 transition-colors">Precision Calculator</h3>
+                    <p class="text-sm text-slate-400 mt-2 leading-relaxed">
+                        A crisp, responsive calculation utility focused on real-time expression parsing, error-proofing, and tactile physical button micro-interactions.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="text-xs bg-slate-900 text-slate-300 px-3 py-1 rounded-md border border-slate-800">HTML</span>
+                        <span class="text-xs bg-slate-900 text-slate-300 px-3 py-1 rounded-md border border-slate-800">Tailwind CSS</span>
+                        <span class="text-xs bg-slate-900 text-slate-300 px-3 py-1 rounded-md border border-slate-800">Javascript</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4 mx-6 mb-6 pt-4 border-t border-slate-800/60 text-sm">
+                <a href="https://dreycalculator.vercel.app/" class="text-white hover:text-violet-400 font-medium transition-colors">Live Demo →</a>
+                <p class="text-slate-400">Click Live Demo to view the project</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="about" class="w-full px-6 py-10 border-t sm:px-6 border-slate-800/50 scroll-mt-24">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-16 items-center">
+
+        <div class="w-full order-2 sm:order-2 text-center sm:text-left space-y-6">
+            <div class="space-y-3">
+                <div class="flex items-center justify-center sm:justify-start gap-2.5">
+                    <span class="h-2 w-2 rounded-full bg-violet-400 animate-pulse"></span>
+                    <span class="text-xs font-mono tracking-widest uppercase text-violet-400">/ DESIGN ENGINEER</span>
+                </div>
+                <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                    I design the experiences that I build.
+                </h2>
+            </div>
+            
+            <div class="space-y-4 text-slate-400 text-sm sm:text-[16px] font-light leading-relaxed">
+                <p>
+                    Hey, I'm <strong class="font-semibold text-white">Damilare Okanlawon</strong>—often known as <strong class="font-medium text-violet-400">Drey</strong>. 
+                    I am a visual designer who also writes clean, functional code.
+                </p>
+                <p>
+                    My process covers the entire creative pipeline. I use <span class="text-slate-200">CorelDRAW</span> to craft solid brand identities, logos, and marketing flyers.
+                    I then move into <span class="text-slate-200">Figma</span> 
+                    to wireframe and prototype intuitive UI/UX website designs. Finally, I bring those exact layouts to life in the browser using 
+                    <span class="text-slate-200">HTML5, Tailwind CSS, and JavaScript</span>.
+                    Because I am the one designing the graphics and writing the code, nothing gets lost in translation. I ensure every vector asset, 
+                    layout grid, and responsive element scales perfectly onto any screen size.
+                </p>
+            </div>
+
+            <div class="flex items-center justify-center sm:justify-start pt-2">
+                <a href="Resume.pdf" 
+                   download="Drey_Resume.pdf" 
+                   class="inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-medium py-3 px-6 
+                   rounded-full transition-all duration-300 transform active:scale-95 text-sm group shadow-lg shadow-violet-600/10">
+                    <span>Download Resume</span>
+                    <svg class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform stroke-current fill-none" 
+                         stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <polyline points="19 12 12 19 5 12"></polyline>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="order-1 sm:order-1 flex justify-center sm:justify-start">
+            <div class="grid grid-cols-2 gap-4 w-full max-w-sm sm:max-w-none">
+
+                <div class="group relative col-span-2 bg-slate-900 border border-slate-800 p-4 rounded-3xl overflow-hidden transition-all duration-300 hover:border-violet-500/50">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-xs font-mono text-slate-600 uppercase">// Drey, The Hybrid</span>
+                    </div>
+                    <div class="h-64 w-full overflow-hidden rounded-xl border border-slate-800/60 bg-slate-950">
+                        <img src="images/img2.jpg" alt="Drey Dev Photo" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                </div>
+
+                <div class="group/figma relative bg-slate-900 border border-slate-800 p-4 rounded-3xl shadow-xl transition-all hover:border-fuchsia-500/50 hover:scale-105 hover:-translate-y-1">
+                    <h4 class="text-[11px] font-bold text-fuchsia-400 uppercase tracking-widest mb-1.5">Figma</h4>
+                    <p class="text-xs text-slate-400">Prototyping & Design Systems</p>
+                    <div class="absolute -inset-px rounded-3xl opacity-0 group-hover/figma:opacity-100 transition-opacity blur-sm bg-gradient-to-tr from-fuchsia-500/20 to-transparent"></div>
+                </div>
+
+                <div class="group/corel relative bg-slate-900 border border-slate-800 p-4 rounded-3xl shadow-xl transition-all hover:border-violet-500/50 hover:scale-[1.02] hover:-translate-y-1">
+                    <h4 class="text-[11px] font-bold text-violet-400 uppercase tracking-widest mb-1.5">CorelDRAW</h4>
+                    <p class="text-xs text-slate-400">Vector Graphics & Branding Assets</p>
+                    <div class="absolute -inset-px rounded-3xl opacity-0 group-hover/corel:opacity-100 transition-opacity blur-sm bg-gradient-to-tr from-violet-500/20 to-transparent"></div>
+                </div>
+
+                <div class="group/js col-span-2 relative bg-slate-900 border border-slate-800 p-4 rounded-3xl shadow-xl transition-all hover:border-emerald-500/50 hover:scale-[1.01] hover:-translate-y-1 flex items-center justify-between">
+                    <div>
+                        <h4 class="text-[11px] font-bold text-emerald-400 uppercase tracking-widest mb-1.5">JavaScript · HTML · Tailwind</h4>
+                        <p class="text-xs text-slate-400 leading-snug">Performance, Accessibility & Fluid Layout Engineering</p>
+                    </div>
+                    <div class="absolute -inset-px rounded-3xl opacity-0 group-hover/js:opacity-100 transition-opacity blur-sm bg-gradient-to-tr from-emerald-500/20 to-transparent"></div>
+                </div>
+
+            </div>
+        </div>
+    
+    </div>
+</section>
+
+
+<section id="skills"  class="py-24 bg-slate-950 text-white overflow-hidden">
+    <div class="w-full px-6 sm:px-6 lg:px-8 scroll-mt-24">
+        <div class="mb-12 text-center md:text-left sm:text-left space-y-3"> 
+            <span class="text-sm font-mono uppercase text-violet-400">// Core Competencies</span>
+            <h2 class=" text-3xl sm:text-4xl font-extrabold tracking-tight max-w-xl ">My Toolkit & Ecosystem</h2>
+            <p class="text-sm text-slate-400 ">From raw vector branding assets to interactive high-fidelity wireframes and responsive frontend code.</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-3 md:grid-cols-3">
+
+            <div class="group/card relative bg-slate-900/50 border border-slate-800 p-6 rounded-3xl transition-all 
+                duration-300 hover:border-violet-500/40 hover:-translate-y-1 shadow-xl">
+
+                <div class="flex justify-between items-center  mb-6 ">
+                    <div class="p-3  bg-violet-500/10 rounded-2xl border border-violet-500/20 text-violet-400"><svg xmlns="http://www.w3.org/2000/svg" fill="none" 
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 
+                        19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+                        </svg>
+                    </div>
+                    <span class="text-[10px] text-slate-400 font-mono uppercase">01 / Assets</span>
+                </div>
+
+                <div>
+                    <h2 class="text-xl sm:text-xl font-bold mb-2">Graphic & Vector Design</h2>
+                    <p class="text-xs text-slate-400 mb-6 leading-relaxed">Crafting lightweight scalable vectors, corporate identities, layout typography, 
+                        and marketing print flyers from absolute scratch.</p>
+                </div>
+
+                <div class="flex flex-wrap text-xs gap-2 mt-auto">
+                    <span class="border border-slate-800 py-1 px-4 bg-slate-950 text-medium rounded-xl text-violet-400">CorelDraw</span>  
+                    <span class="border border-slate-800 py-1 px-4 bg-slate-950 text-medium rounded-xl text-slate-400">Branding Identity</span>
+                    <span class="border border-slate-800 py-1 px-4 bg-slate-950 text-medium rounded-xl text-slate-400">Vector Layout</span>
+                </div>
+
+                <div class="absolute -inset-px rounded-3xl opacity-0 group-hover/card:opacity-100 blur-sm bg-gradient-to-br from-violet-500/10
+                 transition-opacity"></div>
+
+            </div>
+
+             <div class="group/card relative bg-slate-900/50 border border-slate-800 p-6 rounded-3xl transition-all 
+                duration-300 hover:border-fuchsia-500/40 hover:-translate-y-1 shadow-xl">
+
+                <div class="flex justify-between items-center  mb-6 ">
+                    <div class="p-3  bg-violet-500/10 rounded-2xl border border-violet-500/20 text-fuchsia-400"><svg xmlns="http://www.w3.org/2000/svg" fill="none" 
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 
+                        19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
+                        </svg>
+                    </div>
+                    <span class="text-[10px] text-slate-400 font-mono uppercase">02 / Interface</span>
+                </div>
+
+                <div>
+                    <h2 class="text-xl sm:text-xl font-bold mb-2">UI/UX & Prototyping</h2>
+                    <p class="text-xs text-slate-400 mb-6 leading-relaxed">Architecting user flows, responsive low-to-high fidelity wireframes, 
+                        interactive design systems, and component architectures.
+                     </p>
+                </div>
+
+                <div class="flex flex-wrap text-xs gap-2 mt-auto">
+                    <span class="border border-slate-800 py-1 px-4 bg-slate-950 text-medium rounded-xl text-violet-400">Figma</span>  
+                    <span class="border border-slate-800 py-1 px-4 bg-slate-950 text-medium rounded-xl text-slate-400">Wireframing</span>
+                    <span class="border border-slate-800 py-1 px-4 bg-slate-950 text-medium rounded-xl text-slate-400">Design System</span>
+                </div>
+
+                <div class="absolute -inset-px rounded-3xl opacity-0 group-hover/card:opacity-100 blur-sm bg-gradient-to-br from-fuchsia-500/10
+                 transition-opacity"></div>
+
+            </div>
+
+            
+             <div class="group/card relative bg-slate-900/50 border border-slate-800 p-6 rounded-3xl transition-all 
+                duration-300 hover:border-emerald-500/40 hover:-translate-y-1 shadow-xl">
+
+                <div class="flex justify-between items-center  mb-6 ">
+                    <div class="p-3  bg-emerald-500/10 rounded-2xl border border-emerald-500/20 text-emerald-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
+                        </svg>
+
+                    </div>
+                    <span class="text-[10px] text-slate-400 font-mono uppercase">02 / Interface</span>
+                </div>
+
+                <div>
+                    <h2 class="text-xl sm:text-xl font-bold mb-2">UI/UX & Prototyping</h2>
+                    <p class="text-xs text-slate-400 mb-6 leading-relaxed">Architecting user flows, responsive low-to-high fidelity wireframes, 
+                        interactive design systems, and component architectures.
+                     </p>
+                </div>
+
+                <div class="flex flex-wrap text-xs gap-2 mt-auto">
+                    <span class="border border-slate-800 py-1 px-4 bg-slate-950 text-medium rounded-xl text-emerald-400">HTML</span>  
+                    <span class="border border-slate-800 py-1 px-4 bg-slate-950 text-medium rounded-xl text-emerald-400">Tailwind Css</span>
+                    <span class="border border-slate-800 py-1 px-4 bg-slate-950 text-medium rounded-xl text-emerald-400">Javascript(ES6+)</span>
+                </div>
+
+                <div class="absolute -inset-px rounded-3xl opacity-0 group-hover/card:opacity-100 blur-sm bg-gradient-to-br from-emerald-500/10
+                 transition-opacity"></div>
+
+            </div>
+
+         </div>  
+
+
+    </div>
+
+</section>
+
+
+<section id="skills" class="py-5 bg-slate-950 text-white font-sans ">
+    <div class=" w-full px-6 sm:px-6 lg:px-8">
+        
+        <div class="text-center sm:text-left w-full  mb-5">
+            <span class="text-xs font-mono tracking-widest uppercase text-violet-400">// Technical Competencies</span>
+            <h3 class="text-3xl font-extrabold tracking-tight mt-2 text-white sm:text-4xl">
+                Expertise & Toolkit Analytics
+            </h3>
+            <p class="mt-4 text-slate-400 text-sm sm:text-base leading-relaxed">
+                Balancing advanced visual vector engineering with clean, semantically structured responsive frontend code.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-6 lg:gap-8">
+
+            <div class="bg-slate-900/40 border border-slate-900 rounded-3xl p-6 flex flex-col items-center justify-center text-center shadow-xl transition-all duration-300 hover:border-emerald-500/30 hover:-translate-y-1 group">
+                <div class="relative w-28 h-28 flex items-center justify-center mb-5">
+                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="7" class="text-slate-800/60" fill="transparent" />
+                        <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="7" class="text-emerald-400 transition-all duration-1000 ease-out drop-shadow-[0_0_6px_rgba(52,211,153,0.2)]" fill="transparent"
+                                stroke-dasharray="210.2"
+                                stroke-dashoffset="25.12" /> 
+                    </svg>
+                    <div class="absolute text-lg font-black text-white tracking-tighter">75<span class="text-xs text-emerald-400 font-normal">%</span></div>
+                </div>
+                <h4 class="text-sm font-bold text-slate-200 group-hover:text-emerald-400 transition-colors">CorelDRAW</h4>
+                <p class="text-[11px] text-slate-500 mt-1 uppercase font-mono tracking-wider">Vector Assets</p>
+            </div>
+
+            <div class="bg-slate-900/40 border border-slate-900 rounded-3xl p-6 flex flex-col items-center justify-center text-center shadow-xl transition-all duration-300 hover:border-fuchsia-500/30 hover:-translate-y-1 group">
+                <div class="relative w-28 h-28 flex items-center justify-center mb-5">
+                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="7" class="text-slate-800/60" fill="transparent" />
+                        <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="7" class="text-fuchsia-400 transition-all duration-1000 ease-out drop-shadow-[0_0_6px_rgba(232,121,249,0.2)]" fill="transparent"
+                                stroke-dasharray="180.2"
+                                stroke-dashoffset="12.56" /> 
+                    </svg>
+                    <div class="absolute text-lg font-black text-white tracking-tighter">70<span class="text-xs text-fuchsia-400 font-normal">%</span></div>
+                </div>
+                <h4 class="text-sm font-bold text-slate-200 group-hover:text-fuchsia-400 transition-colors">Figma</h4>
+                <p class="text-[11px] text-slate-500 mt-1 uppercase font-mono tracking-wider">UI/UX Interface</p>
+            </div>
+
+            <div class="bg-slate-900/40 border border-slate-900 rounded-3xl p-6 flex flex-col items-center justify-center text-center shadow-xl transition-all 
+                        duration-300 hover:border-orange-500/30 hover:-translate-y-1 group">
+                <div class="relative w-28 h-28 flex items-center justify-center mb-5">
+                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="7" class="text-slate-800/60" fill="transparent" />
+                        <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="7" class="text-orange-400 transition-all duration-1000 ease-out drop-shadow-[0_0_6px_rgba(251,146,60,0.2)]" fill="transparent"
+                                stroke-dasharray="200.2"
+                                stroke-dashoffset="12.56" /> 
+                    </svg>
+                    <div class="absolute text-lg font-black text-white tracking-tighter">75<span class="text-xs text-orange-400 font-normal">%</span></div>
+                </div>
+                <h4 class="text-sm font-bold text-slate-200 group-hover:text-orange-400 transition-colors">HTML5</h4>
+                <p class="text-[11px] text-slate-500 mt-1 uppercase font-mono tracking-wider">Semantic Structure</p>
+            </div>
+
+            <div class="bg-slate-900/40 border border-slate-900 rounded-3xl p-6 flex flex-col items-center justify-center text-center shadow-xl transition-all duration-300 hover:border-sky-400/30 hover:-translate-y-1 group">
+                <div class="relative w-28 h-28 flex items-center justify-center mb-5">
+                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="7" class="text-slate-800/60" fill="transparent" />
+                        <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="7" class="text-sky-400 transition-all duration-1000 ease-out drop-shadow-[0_0_6px_rgba(56,189,248,0.2)]" fill="transparent"
+                                stroke-dasharray="210.2"
+                                stroke-dashoffset="25.12" /> 
+                    </svg>
+                    <div class="absolute text-lg font-black text-white tracking-tighter">70<span class="text-xs text-sky-400 font-normal">%</span></div>
+                </div>
+                <h4 class="text-sm font-bold text-slate-200 group-hover:text-sky-400 transition-colors">Tailwind CSS</h4>
+                <p class="text-[11px] text-slate-500 mt-1 uppercase font-mono tracking-wider">Utility Styling</p>
+            </div>
+
+            <div class="bg-slate-900/40 border border-slate-900 rounded-3xl p-6 flex flex-col items-center justify-center 
+                        text-center shadow-xl transition-all duration-300 hover:border-yellow-400/30 hover:-translate-y-1 group col-span-2 
+                        md:col-span-1 max-w-[50%] md:max-w-none mx-auto w-full">
+                <div class="relative w-28 h-28 flex items-center justify-center mb-5">
+                    <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="7" class="text-slate-800/60" fill="transparent" />
+                        <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="7" class="text-yellow-400 transition-all duration-1000 ease-out drop-shadow-[0_0_6px_rgba(250,204,21,0.2)]" fill="transparent"
+                                stroke-dasharray="165.2"
+                                stroke-dashoffset="50.24"/> 
+                    </svg>
+                    <div class="absolute text-lg font-black text-white tracking-tighter">40<span class="text-xs text-yellow-400 font-normal">%</span></div>
+                </div>
+                <h4 class="text-sm font-bold text-slate-200 group-hover:text-yellow-400 transition-colors">JavaScript</h4>
+                <p class="text-[11px] text-slate-500 mt-1 uppercase font-mono tracking-wider">Dynamic Logic</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<section id="testimonial" class="py-24 bg-slate-950 text-white overflow-hidden">
+
+    <div class="w-full px-6 sm:px-6 lg:px-8">
+    
+
+        <div class="text-center w-full sm:text-left mb-10 space-y-4 ">
+
+            <span class="text-xs font-mono tracking-widest uppercase text-violet-400">//Client Trust</span>
+            <h3 class="text-3xl sm:text-4xl font-extrabold">What People Say About My Work</h3>
+            <p class="text-slate-400 text-sm sm:text sm:text-base">
+                Hear from the project managers, brand owners, and engineering teams I've collaborated with to ship premium digital products.
+            </p>
+
+        </div>
+
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-3 md:grid-cols-3 lg:gap-8">
+
+            <div class="bg-slate-900/40 border border-slate-900 rounded-3xl p-8 flex flex-col justify-between 
+                shadow-xl transition-all duration-300 hover:border-violet-500/30 hover:-translate-y-1 group">
+
+                <div class="group-hover:text-violet-500/40 transition-colors mb-6 text-violet-500/20">
+                    <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 
+                            5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 
+                            5.849h3.983v10h-9.983z"/>
+                        </svg>
+                </div>
+
+                <div>
+                    <p class="text-slate-400 text-sm leading-relaxed italic mb-8">"Damilare is a rare breed in tech. He didn't just code our layout; he re-sculpted our entire brand identity in CorelDRAW 
+                        first, wireframed the journey in Figma, and shipped it flawlessly in Tailwind. Having a designer who speaks native code 
+                        saved our team weeks of back-and-forth revisions."</p>
+                </div>
+
+                <div class="flex items-center gap-4 pt-4 border-t border-slate-800/60">
+                    <div class="h-10 w-10 rounded-full bg-gradient-to-tr from-violet-500 to-fuchsia-500 flex items-center justify-center font-bold text-sm text-white">
+                        AM
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-white">Ayorinde Michael</h4>
+                        <p class="text-xs text-slate-500">Web Developer, AM Media</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="bg-slate-900/40 border border-slate-900 rounded-3xl p-8 flex flex-col justify-between shadow-xl transition-all duration-300 hover:border-fuchsia-500/30 hover:-translate-y-1 group">
+                <div>
+                    <div class="text-fuchsia-500/20 group-hover:text-fuchsia-500/40 transition-colors mb-6">
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 
+                            5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 
+                            5.849h3.983v10h-9.983z"/>
+                        </svg>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed italic mb-8">
+                        "We hired Drey to build our web application UI interface ecosystem. The design systems he architected inside Figma were clean and modular, 
+                        but watching him engineer them into crisp, lightweight Tailwind CSS layout files was the real magic. Absolute professional engineering."
+                    </p>
+                </div>
+                <div class="flex items-center gap-4 pt-4 border-t border-slate-800/60">
+                    <div class="h-10 w-10 rounded-full bg-gradient-to-tr from-fuchsia-500 to-sky-500 flex items-center justify-center font-bold text-sm text-white">
+                        PA
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-white"> President Samson </h4>
+                        <p class="text-xs text-slate-500">UI/UX Designer, NACOS Labs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-slate-900/40 border border-slate-900 rounded-3xl p-8 flex flex-col justify-between shadow-xl transition-all duration-300
+                         hover:border-emerald-500/30 hover:-translate-y-1 group">
+                <div>
+                    <div class="text-emerald-500/20 group-hover:text-emerald-500/40 transition-colors mb-6">
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24">
+                            <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 
+                            5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 
+                            5.849h3.983v10h-9.983z"/>
+                        </svg>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed italic mb-8">
+                        "Every vector asset scales perfectly and the responsive breaks are completely seamless. Drey's technical approach 
+                        eliminates structural design handoff bugs completely. He designs the logic and writes code that respects the original 
+                        artwork file grid bounds."</p>
+                </div>
+                <div class="flex items-center gap-4 pt-4 border-t border-slate-800/60">
+                    <div class="h-10 w-10 rounded-full bg-gradient-to-tr from-emerald-500 to-yellow-500 flex items-center justify-center font-bold text-sm text-white">
+                        TA
+                    </div>
+                    <div>
+                        <h4 class=" text-sm font-bold text-white">Aluko Kehinde</h4>
+                        <p class="text-xs text-slate-500">Web Engineer, NACOS Labs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<section id="contact" class="py-10 bg-slate-950 text-white font-sans">
+    <div class="w-full px-6 sm:px-6">
+
+        <div class="sm:text-left md:text-left text-center lg:text-left w-full ">
+            <span class="text-emerald-400 uppercase text-xs font-mono">// Instant Communications</span>
+            <h3 class="text-3xl font-extrabold tracking-tight mt-2 sm:text-4xl ">Let's Start a Conversation</h3>
+            <p class="text-slate-400 sm:text-base leading-relaxed mt-4">Click any channel below to open a direct message line, send an email, or jump straight into a call.</p>
+        </div>
+        <div class="grid grid-cols-1 gap gap-4 sm:grid-cols-2 w-full mt-10">
+            <a href="tel:+2347011687497" class="flex items-center justify-between p-5 bg-slate-900/40 border border-slate-900 rounded-2xl
+            hover:border-sky-500/30 hover:bg-slate-900/80 group transition-all ">
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-sky-500/10 rounded-xl text-sky-400 group-hover:bg-sky-500 group-hover:text-white transition-all">
+                        <svg class="w-5 h-5 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                    </div>
+                    <div class="">
+                        <span class="text-slate-500 uppercase text-[10px] block font-mono tracking-wide">Voice Call</span>
+                        <span class="font-mono font-semibold text-slate-200">+234 701 168 7497</span>
+                    </div>
+                </div>
+                <span class="class=text-xs font-mono text-slate-600 group-hover:text-sky-400 transition-colors ">// Dial</span>
+            </a>
+
+            <a href="https://wa.me/2348098101619text=Hello%20Damilare,%20I%20viewed%20your%20portfolio..." 
+               target="_blank" 
+               class="flex items-center justify-between p-5 bg-slate-900/40 border 
+                    border-slate-900 rounded-2xl hover:border-emerald-500/30 hover:bg-slate-900/80 transition-all group">
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-emerald-500/10 rounded-xl text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.454 5.709 1.455h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] font-mono uppercase text-slate-500 tracking-wider">Instant Chat</span>
+                        <span class="text-sm font-semibold text-slate-200">WhatsApp Business</span>
+                    </div>
+                </div>
+                <span class="text-xs font-mono text-slate-600 group-hover:text-emerald-400 transition-colors">// Message</span>
+            </a>
+
+            <a href="mailto:okanlawondamilare08@gmail.com" target="_blank"
+               class="flex items-center justify-between p-5 bg-slate-900/40 border border-slate-900 rounded-2xl hover:border-red-500/30 hover:bg-slate-900/80 transition-all group">
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-red-500/10 rounded-xl text-red-400 group-hover:bg-red-500 group-hover:text-white transition-all">
+                       
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" role="img">
+                            <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] font-mono uppercase text-slate-500 tracking-wider">Instant Mail </span>
+                        <span class="text-sm font-semibold text-slate-200">Google Mail</span>
+                    </div>
+                </div>
+                <span class="text-xs font-mono text-slate-600 group-hover:text-red-400 transition-colors">// Write</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/damilare-okanlawon"     
+               target="_blank" 
+               class="flex items-center justify-between p-5 bg-slate-900/40 border border-slate-900 rounded-2xl hover:border-blue-500/30 hover:bg-slate-900/80 transition-all group">
+                <div class="flex items-center gap-4">
+                    <div class="p-3 bg-blue-500/10 rounded-xl text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="block text-[10px] font-mono uppercase text-slate-500 tracking-wider">Professional Network</span>
+                        <span class="text-sm font-semibold text-slate-200">LinkedIn Profile</span>
+                    </div>
+                </div>
+                <span class="text-xs font-mono text-slate-600 group-hover:text-blue-400 transition-colors">// View</span>
+            </a>
+        </div>
+    </div>
+
+    
+    <div class="px-6 text-slate-600 border-t border-slate-900/60 text-center text-xs mt-20 font-mono pt-10">
+            &copy; 2026 Drey. Built with responsive utility actions.
+    </div>
+
+</section>
+
+
+
+
+
+</body>
+</html>
